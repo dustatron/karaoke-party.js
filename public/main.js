@@ -6,7 +6,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         // User is signed in.
     }else{
         uid = null;
-        window.location.replace('login.html');
+        window.location.replace('index.html');
     }
 });
 
