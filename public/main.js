@@ -44,30 +44,65 @@ btnNew.addEventListener('click', function(){
 // ------- SHOW BUTTON LISTEN ------
 var btnShow = document.getElementById('show');
     btnShow.addEventListener('click', function(){
-    document.getElementById('test').innerHTML = firebase.auth().currentUser.uid;
+    document.getElementById('list').innerHTML = firebase.auth().currentUser.uid;
     
 });
 
 //------- Draw Party List------
 var drawParties = function(){
     var userID = firebase.auth().currentUser.uid;
-    document.getElementById('test').innerHTML = " ";
+    document.getElementById('list').innerHTML = " ";
 
     partyDB.where('user', "==", userID)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
+            var id = doc.id;
             // doc.data() is never undefined for query doc snapshots
-            document.getElementById('test').innerHTML += "Party Name: " + doc.data().name + '<hr>';
-            console.log(doc.id, " => ", doc.data());
+            document.getElementById('list').innerHTML += "<div id='"
+            + id +"-01' class='card' > Party: "
+            + doc.data().name +
+            '<button class="btn btn-primary">Add Songs</button><button id='
+            + id +' class="delete-btn btn btn-danger" >Delete</button></div>';
+            
+            var delBtn = document.querySelectorAll('.delete-btn');
+            delBtn.forEach(function(doc){
+                doc.addEventListener('click', function(){
+                    killParty(doc.id);
+                    drawParties();
+                })
+            });
+
+            // document.getElementById(id).addEventListener('click', function(){
+            //     console.log('click');
+            // });
+
+            console.log(id, " => ", doc.data());
         });
     })
     .catch(function(error) {
+         
         console.log("Error getting documents: ", error);
     });
-}
+};
 
 
+var buildClick = function(){
+    var allCards = document.querySelector('.btn-danger');
+    allCards.forEach(function(thisCard){
+        thisCard.addEventListener('click', function(){
+            console.log('click');
+        });
+    });
+};
+
+var killParty = function(partyID){
+    partyDB.doc(partyID).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+};
 
 
 
