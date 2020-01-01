@@ -74,14 +74,20 @@ var LiveUpdate = function(userID) {
                 document.getElementById('list').innerHTML += "<div id='"
                 + id +"-01' class='card' > Party: "
                 + doc.data().partyName +
-                '<button class="btn btn-primary">Add Songs</button><button id='
-                + id +' class="delete-btn btn btn-danger" >Delete</button></div>';
+                '<button value="'+ id +'" class="edit-btn btn btn-primary">Add Songs</button>'+
+                '<button value="'+ id +'" class="delete-btn btn btn-danger" >Delete</button></div>';
 
                 var delBtn = document.querySelectorAll('.delete-btn');
                 delBtn.forEach(function(doc){
                     doc.addEventListener('click', function(){
-                        killParty(doc.id);
-                        // drawParties();
+                        killParty(doc.value);
+                    })
+                });
+
+                var editBtn = document.querySelectorAll('.edit-btn');
+                editBtn.forEach(function(doc){
+                    doc.addEventListener('click', function(){
+                        window.location.href = 'playlist.html?' + doc.value;
                     })
                 });
             });

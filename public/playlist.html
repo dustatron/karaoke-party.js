@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Playlist</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Twitter Bootstrabs -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- Firebase Header -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <!-- custom css  -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+   
+</head>
+<body>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.6.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.6.1/firebase-auth.js"></script>
+  <script src="/__/firebase/7.6.1/firebase-firestore.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  
+
+    <div class="container">
+        <div class="jumbotron text-center">
+            <div class="col-md-8 offset-md-2">
+                <h2>Kparty Playlist</h2>
+            </div>
+        </div>
+
+        <!-- Create New Party -->
+        <div class="input-group mb-3">
+            <input id='newSongInput' type="text" class="form-control" placeholder="Song Name">
+            <div class="input-group-append">
+            <button id='newSongBtn' class="btn btn-outline-secondary" type="button">Add Song</button>
+            </div>
+        </div>
+
+        <div id="list"> </div>
+    </div>
+
+    
+
+    <script src='firebase.js'></script>
+    <script src='playlist.js'></script>
+</body>
+</html>
