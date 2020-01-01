@@ -39,6 +39,6 @@ var LiveUpdate = function() {
 
                 document.getElementById('list').innerHTML += doc.data().songName + '<hr>';
 
-                });
             });
-        }();
+        });
+}();
