@@ -1,8 +1,10 @@
+var partyDB = firestore.collection("parties");
 
 var isLoggedIn = function(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
+            drawParties();
         }else{
             window.location.replace('index.html');
         }
@@ -18,18 +20,19 @@ function logOut (){
 
 // ------- NEW BUTTON LISTEN ------
 var btnNew = document.getElementById('new');
+var inputNew = document.getElementById('newInput');
 btnNew.addEventListener('click', function(){
 
     var userID = firebase.auth().currentUser.uid;
 
-    var endOfYear = {
-        name: 'end of year',
-        user: userID,
-        songs: 'all the hits'
+    var newParty = {
+        name: newInput.value,
+        user: userID
     }
 
-    firestore.collection("parties").add(endOfYear)
+    firestore.collection("parties").add(newParty)
     .then(function(docRef) {
+        drawParties();
         console.log("Document written with ID: ", docRef.id);
     })
     .catch(function(error) {
@@ -44,6 +47,25 @@ var btnShow = document.getElementById('show');
     document.getElementById('test').innerHTML = firebase.auth().currentUser.uid;
     
 });
+
+//------- Draw Party List------
+var drawParties = function(){
+    var userID = firebase.auth().currentUser.uid;
+    document.getElementById('test').innerHTML = " ";
+
+    partyDB.where('user', "==", userID)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            document.getElementById('test').innerHTML += "Party Name: " + doc.data().name + '<hr>';
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+}
 
 
 
