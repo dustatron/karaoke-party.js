@@ -73,10 +73,6 @@ var drawParties = function(){
                 })
             });
 
-            // document.getElementById(id).addEventListener('click', function(){
-            //     console.log('click');
-            // });
-
             console.log(id, " => ", doc.data());
         });
     })
