@@ -1,0 +1,67 @@
+html {
+    margin: 0;
+    padding: 0;
+    font: 16;
+}
+
+.box-container {
+    background-color: #333;
+    height: 90vh;
+    width: 95vw;
+    margin: 10px auto;
+    color: lightgray;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.tool-bar{
+    background-color: rgb(38, 38, 38);
+    height: 3rem;
+    padding-top: .6rem;
+}
+
+.menu, ul, li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 2rem;
+}
+
+
+
+.slider-box{
+    position: relative;
+	transition: all 1s;
+}
+
+.playlist-box {
+    position: absolute;
+    top: 0rem;
+    left: 95vw;
+    width: 95vw;
+    height: 90vh;
+    background-color:;
+    padding: 3rem;
+}
+
+.search-box {
+    position: absolute;
+    top: 0rem;
+    left: 0;
+    width: 95vw;
+    height: 90vh;
+    background-color: #121212;
+    padding: 3rem;
+}
+
+.searchNavBtn {
+    cursor: pointer;
+}
+
+.playlistNavBtn {
+    cursor: pointer;
+}
+
+.shareNavBtn {
+    cursor: pointer;
+}

@@ -1,6 +1,24 @@
 var param = window.location.search.substring(1);
 var playlistDB = firestore.collection("parties").doc(param);
 
+//----- Nav Buttons -----
+var navButtons = function() {
+    var search, playlist, share;
+
+    search = $( ".searchNavBtn" ).click(function() {
+        $(".slider-box").css( 'transform', 'translateX(0vw)');
+      });;
+
+      playlist = $( ".playlistNavBtn" ).click(function() {
+        $(".slider-box").css( 'transform', 'translateX(-95vw)');
+      });;
+
+      share = $( ".shareNavBtn" ).click(function() {
+        console.log('click');
+      });;
+
+}();
+
 //---- New Song Logic
 var newSong = function() {
     var newSongInput = document.getElementById('newSongInput');
