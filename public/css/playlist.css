@@ -11,14 +11,21 @@ html {
     margin: 10px auto;
     color: lightgray;
     overflow: hidden;
+    overflow: scroll;
     padding: 0;
     position: relative;
+    border-radius: 10px;
 }
 
 .tool-bar{
-    background-color: rgb(38, 38, 38);
+    position: fixed;
+    z-index: 10;
+    background-color: rgb(7, 7, 7);
     height: 3rem;
     padding-top: .6rem;
+    width: 101%;
+    left: 15px;
+    top: 0;
 }
 
 .menu, ul, li {
@@ -36,11 +43,11 @@ html {
 
 .playlist-box {
     position: absolute;
-    top: 0rem;
+    top: 0.01rem;
     left: 95vw;
     width: 95vw;
     height: 90vh;
-    background-color:;
+    /* background-color:; */
     padding: 3rem;
 }
 
@@ -50,7 +57,7 @@ html {
     left: 0;
     width: 95vw;
     height: 90vh;
-    background-color: #121212;
+    /* background-color: #121212; */
     padding: 3rem;
 }
 
@@ -64,4 +71,8 @@ html {
 
 .shareNavBtn {
     cursor: pointer;
+}
+
+.card {
+    color:black !important;  
 }
