@@ -16,7 +16,7 @@ playlistDB.get().then(doc => {
 
 // --- Live Readout
 var LiveUpdate = function() {
-    playlistDB.collection("playlist")
+    playlistDB.collection("playlist").orderBy("timeStamp")
         .onSnapshot(function(querySnapshot) {
             // Clears list 
             document.getElementById('listout').innerHTML = " ";
