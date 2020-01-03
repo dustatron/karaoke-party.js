@@ -72,15 +72,24 @@ var LiveUpdate = function(userID) {
 
                 // Draws Party box
                 document.getElementById('list').innerHTML += "<div id='"
-                + id +"-01' class='card' > Party: "
-                + doc.data().partyName +
+                + id +"-01' class='card'><h4 class='text-center'> Party: "
+                 + doc.data().partyName + '</h4>' +
                 '<button value="'+ id +'" class="edit-btn btn btn-primary">Add Songs</button>'+
-                '<button value="'+ id +'" class="delete-btn btn btn-danger" >Delete</button></div>';
+                '<button value="'+ id +'" class="show-btn btn btn-secondary">Start Show</button></div>'+
+                '<button value="'+ id +'" class="delete-btn btn btn-danger btn-block btn-lg">Delete</button></div>'+
+                '<hr>';
 
                 var delBtn = document.querySelectorAll('.delete-btn');
                 delBtn.forEach(function(doc){
                     doc.addEventListener('click', function(){
                         killParty(doc.value);
+                    })
+                });
+
+                var showBtn = document.querySelectorAll('.show-btn');
+                showBtn.forEach(function(doc){
+                    doc.addEventListener('click', function(){
+                        window.location.href = 'show.html?' + doc.value;
                     })
                 });
 

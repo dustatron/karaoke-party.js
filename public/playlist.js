@@ -85,7 +85,8 @@ var newSong = function() {
                 timeStamp: currentTime,
                 songName:  data.items[value].snippet.title,
                 description: data.items[value].snippet.description,
-                youtubeID: data.items[value].id.videoId
+                youtubeID: data.items[value].id.videoId,
+                thumbnail: data.items[value].snippet.thumbnails.default.url
             }
     
             //Write to Firestore
