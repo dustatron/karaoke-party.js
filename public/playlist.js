@@ -8,7 +8,9 @@ var navButtons = function() {
     var search, playlist, share;
 
     search = $( ".searchNavBtn" ).click(function() {
+        document.getElementById('slider-box').scrollIntoView()
         $(".slider-box").css( 'transform', 'translateX(-95vw)');
+        
       });;
 
       playlist = $( ".playlistNavBtn" ).click(function() {
@@ -125,10 +127,6 @@ var LiveUpdate = function() {
 
 function topFunction() {
     console.log('topFunction');
-    // document.body.scrollTop = 0;
-    // searchScreen.animate({ scrollTop: 0 }, "fast");
-    // $('body, html, #printout').scrollTop(0);
-    // $('#printout').show();
-    // $('#printout').scrollTop(0);
-    document.getElementById('search-box').scrollIntoView(true);
+
+    document.getElementById('slider-box').scrollIntoView(true);
   }
