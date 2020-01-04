@@ -45,16 +45,23 @@
         <div class="row tool-bar">
             <div class="col-sm-12 text-center">
                 <ul class="menu">
+                    <li class='searchNavBtn'><a href="main.html" class="home-btn"><i class="fas fa-home"></i></a></li>
+                    <li class='playlistNavBtn'> <a href="#"></a><i class="fas fa-list"></i> Playlist </a> </li>
                     <li class='searchNavBtn'> <i class="fab fa-searchengin"></i> Search </li>
-                    <li class='playlistNavBtn'>  <i class="fas fa-list"></i> Playlist </li>
                     <li class='shareNavBtn'> <i class="fas fa-share-square"></i> Share </li>
                 </ul>
             </div>
         </div>
         <div class="slider-box">
+            <!-- Playlist Box -->
+            <div class="playlist-box">
+                <h3 class='text-center'>Playlist</h3>
+                <div id="list"> </div>
+            </div>  
+
             <!-- Search Box -->
-            <div class="search-box">
-                <!-- Search for Song -->
+            <div id="search-box" class="search-box">
+            <!-- Search for Song -->
                 <h3 class="text-center">Song Search</h3>
                 <div class="input-group mb-3">
                     <input id='newSongInput' type="text" class="form-control" placeholder="Song Name">
@@ -62,14 +69,8 @@
                     <button id='newSongBtn' class="btn btn-outline-secondary" type="button">Search</button>
                     </div>
                 </div>
-                <div id='printout'></div>
-            </div>
-            
-            <!-- Playlist Box -->
-            <div class="playlist-box">
-                <h3 class='text-center'>Playlist</h3>
-                <div id="list"> </div>
-            </div>    
+            <div id='printout'></div>
+        </div>  
      </div>
 
     </div>

@@ -1,5 +1,6 @@
 var param = window.location.search.substring(1);
 var playlistDB = firestore.collection("parties").doc(param);
+// var searchScreen = $('#printout');
 
 
 //----- Nav Buttons -----
@@ -7,11 +8,11 @@ var navButtons = function() {
     var search, playlist, share;
 
     search = $( ".searchNavBtn" ).click(function() {
-        $(".slider-box").css( 'transform', 'translateX(0vw)');
+        $(".slider-box").css( 'transform', 'translateX(-95vw)');
       });;
 
       playlist = $( ".playlistNavBtn" ).click(function() {
-        $(".slider-box").css( 'transform', 'translate(-95vw, 0px)');
+        $(".slider-box").css( 'transform', 'translate(0vw, 0px)');
       });;
 
       share = $( ".shareNavBtn" ).click(function() {
@@ -93,6 +94,9 @@ var newSong = function() {
             playlistDB.collection("playlist").add(addSong)
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
+                newSongInput.val(' ');
+                printOut.innerHTML = '<div class="card text-center"> <h3>Your video "'+ data.items[value].snippet.title +'" was added </h3> </div>';
+                topFunction();
             })
             .catch(function(error) {
                 console.error("Error adding document: ", error);
@@ -106,7 +110,7 @@ newSong();
 
 // --- Live Readout
 var LiveUpdate = function() {
-    playlistDB.collection("playlist")
+    playlistDB.collection("playlist").orderBy("timeStamp")
         .onSnapshot(function(querySnapshot) {
             document.getElementById('list').innerHTML = " ";
 
@@ -118,3 +122,13 @@ var LiveUpdate = function() {
             });
         });
 }();
+
+function topFunction() {
+    console.log('topFunction');
+    // document.body.scrollTop = 0;
+    // searchScreen.animate({ scrollTop: 0 }, "fast");
+    // $('body, html, #printout').scrollTop(0);
+    // $('#printout').show();
+    // $('#printout').scrollTop(0);
+    document.getElementById('search-box').scrollIntoView(true);
+  }
