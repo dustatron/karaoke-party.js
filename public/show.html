@@ -13,12 +13,16 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
+    <!-- Font font-awesome -->
+    <script src="https://kit.fontawesome.com/fde1caffb7.js" crossorigin="anonymous"></script>
+
     <!-- Firebase Header -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
     <!-- custom css  -->
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/show.css" />
 
    
 </head>
@@ -36,36 +40,39 @@
   
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h2 id="party-title">Party Title</h2>
+        <div class="row show-nav">
+            <div class="col-md-2">
+                <a href="main.html" class="home-btn"><i class="fas fa-home"></i></a>
             </div>
-        </div.col-md-8 >
+            <div class="col-md-6">
+                <span class='title-text'>Your Part : <span id="party-title"></span></span>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-8 text-center">
-                Video Player
+        <div class="row box-container">
+            <div class="col-md-9 box-player">
                 <div class="">
                     <div class="col-xs-4 embed-responsive embed-responsive-16by9">
                         <div id="player"></div>
                         <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ video.id.videoId "></iframe> -->
                     </div>
-                    <div class="col-md-12">
-                        <h4> video.snippet.title </h4>
-                    </div>
+                </div>
+                <div class="col-md-12 text-center shuttle-buttons">
+                    <button class=" btn-show noselect " onclick="playerBackword()"><i class="fas fa-step-backward"></i></button>
+                    <button class=" btn-show noselect" onclick="playVideo()" > <i class="fas fa-play"></i> <i class="fas fa-pause"></i></button>
+                    <button class=" btn-show noselect" onclick="playUpdate()" ><i class="fas fa-step-forward"></i></button>
+    
                 </div>
 
             </div>
-            <div class="col-md-4 text-center">
-                Playlist
+            <div class="col-md-3 song-box--playlist">
                 <div id="listout">
                     <div class="col-md-12">
-                        List items
+                        <!-- Playlist goes here  -->
                     </div>
                 </div>
             </div>
         </div>
-        <button onclick="playUpdate()">Push to Start</button>
+    
 
     </div>
     

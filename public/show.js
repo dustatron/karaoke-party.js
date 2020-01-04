@@ -2,6 +2,8 @@ var param = window.location.search.substring(1);
 var playlistDB = firestore.collection("parties").doc(param);
 var counter = 0;
 var songObj = [];
+var started = false;
+var isPlayingNow = false;
 
 
 
@@ -20,13 +22,16 @@ var LiveUpdate = function() {
         .onSnapshot(function(querySnapshot) {
             // Clears list 
             document.getElementById('listout').innerHTML = " ";
-            // var tally = 0;
+            var tally = 0;
 
             //Writes list
             querySnapshot.forEach(function(doc, i) {
                 songObj.push(doc.data().youtubeID);
-                // tally ++;
-                listOut.innerHTML += '<div value="'+ doc.data().youtubeID +'" class="card">'+ doc.data().songName + '</div>';
+                tally ++;
+                listOut.innerHTML += '<div id="'+ tally +'" class="song-box">'+
+                // '<div class="song-box--img">' + '<img class="song-box--image" src="'+ doc.data().thumbnail +'" alt="image"></div>' +
+                 '<div class=" col-md-12 song-box--copy"><span class="tally">['+tally+']</span>'+doc.data().songName + ' </div>' +
+                '</div>';
             });
             
         });
@@ -57,12 +62,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 
-//'qx-I0RdNmN0'
-
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-    event.target.playVideo();
+    // event.target.playVideo();
   }
 
   // 5. The API calls this function when the player's state changes.
@@ -80,6 +83,28 @@ function onPlayerReady(event) {
     player.stopVideo();
   }
 
+  function playVideo() {
+      if(started) {
+        if(isPlayingNow){
+            player.pauseVideo();
+            isPlayingNow = false;
+
+        }else{
+            player.playVideo();
+            isPlayingNow = true;
+        }
+      }else{
+        started = true;
+        playUpdate(); 
+      }
+      
+  }
+
+function playerBackword() {
+   counter = counter -2;
+   playUpdate();
+}
+
   function playUpdate() {
     var end = 'qyQx7nxXdD0';
     var playThis;
@@ -87,10 +112,27 @@ function onPlayerReady(event) {
     if(songObj.length > counter ) {
         playThis = songObj[counter];
         player.loadVideoById(playThis);
+        showCurrentSong(counter+1);
         counter ++;
     } else {
         playThis = end;
         player.loadVideoById(playThis);
         stopVideo();
+        clearCurrentSong();
     }
   };
+
+
+  function showCurrentSong(que) {
+    clearCurrentSong();
+    currentSong = document.getElementById(que);
+    currentSong.classList.add("active-song");
+
+  }
+
+  function clearCurrentSong() {
+    clearList = document.querySelectorAll('.active-song');
+    clearList.forEach(function(doc){
+      doc.classList.remove("active-song");
+    });
+  }
