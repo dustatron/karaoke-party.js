@@ -1,0 +1,39 @@
+.tool-bar{
+    position: fixed;
+    z-index: 10;
+    background-color: rgb(7, 7, 7);
+    height: 3.5rem;
+    padding-top: .6rem;
+    width: 101%;
+    left: 15px;
+    top: 0;
+}
+
+.home-btn {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.menu, ul, li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 1rem;
+    transition: all .3s;
+}
+
+.show-nav {
+    position: fixed;
+    z-index: 10;
+    background-color: rgb(7, 7, 7);
+    height: 5rem;
+    padding-top: .6rem;
+    width: 101%;
+    left: 15px;
+    top: 0;
+    text-align: center;
+}
+
+.home-btn {
+    font-size: 2.5rem;
+    text-decoration: none;
+}

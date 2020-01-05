@@ -1,0 +1,55 @@
+
+.box-container {
+    background-color: #333;
+    height: 90vh;
+    width: 95vw;
+    margin: 10px auto;
+    color: lightgray;
+    overflow: hidden;
+    overflow: scroll;
+    padding: 0;
+    position: relative;
+    // border-radius: 10px;
+}
+
+
+.slider-box{
+    position: relative;
+	transition: all 1s;
+}
+
+.playlist-box {
+    position: absolute;
+    top: 0.01rem;
+    left: 0;
+    width: 95vw;
+    height: 90vh;
+    /* background-color:; */
+    padding: 3rem;
+}
+
+.search-box {
+    position: absolute;
+    top: 0rem;
+    left: 95vw;
+    width: 95vw;
+    height: 90vh;
+    /* background-color: #121212; */
+    padding: 3rem;
+}
+
+.searchNavBtn {
+    cursor: pointer;
+}
+
+.playlistNavBtn {
+    cursor: pointer;
+}
+
+.shareNavBtn {
+    cursor: pointer;
+}
+
+.card {
+    color:black !important;  
+}
