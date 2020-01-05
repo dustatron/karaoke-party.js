@@ -10,6 +10,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
+    <!-- Font font-awesome -->
+    <script src="https://kit.fontawesome.com/fde1caffb7.js" crossorigin="anonymous"></script>
+
     <!-- Firebase Header -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -33,9 +36,18 @@
   
 
     <div class="container">
-        <div class="jumbotron text-center">
-            <div class="col-md-8 offset-md-2">
-                <h2>Start your K Party Here</h2>
+        <!-- TOOL BAR -->
+        <div class="row nav-bar">
+            <div class="col-sm-12 text-center">
+                <ul class="menu">
+                    <li class='nav-bar--home-btn '><a href="main.html" class="nav-bar--hover"><i class="fas fa-home"></i></a></li>
+                    <li class='searchNavBtn nav-bar--hover' onclick="logOut()"> <i class="fas fa-sign-out-alt" ></i> Log Out </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center search-bar party-box--title">
+            <div class="col-md-8 offset-md-2 ">
+                <h2>Create A Party</h2>
             </div>
 
             <!-- Create New Party -->
@@ -46,12 +58,8 @@
                 </div>
             </div>
 
-            <!-- Log Out Button -->
-            <div class="col-md-4 offset-md-4 justify-content-center">
-                <button onclick="logOut()" class="btn btn-primary">Log Out</button>
-            </div>
         </div>
-        <div id="list"> </div>
+        <div id="list" class="row"> </div>
     </div>
 
     

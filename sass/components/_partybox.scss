@@ -1,0 +1,59 @@
+
+.search-bar {
+    margin-top: 5rem;
+    height: 10rem;
+    background-color: $color-dk-grey;
+    padding: 1rem 3rem;
+    color: $color-white;
+}
+.party-box{
+    height: 12rem;
+    widows: auto;
+    background-color: $color-dk-grey;
+    color: $color-white;
+    margin: 2.2rem;
+    text-align: center;
+    border-radius: 5px;
+
+    padding-top: 1.3rem;
+
+    &--title{
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &--btn{
+        margin-top: 1rem;
+        height: 3rem;
+        width: 9rem;
+        margin-right: .5rem;
+        background-color: $color-lt-grey;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        color: $color-black;
+        -webkit-box-shadow: 0px 5px rgb(0, 0, 0); 
+        box-shadow: 0px 5px rgb(0, 0, 0);
+        transition: all .2s;
+
+        &:hover{
+            // cursor: pointer;
+            background-color: $color-green;
+            -webkit-box-shadow: 0px 5px #252814; 
+            box-shadow: 0px 5px #252814;
+            transform: scale(1.05);
+        }
+
+        &:active{
+            -webkit-box-shadow: 0px 0px #252814;
+            box-shadow: 0px 0px #252814;
+            /* top:4px; */
+            transform: scale(1.05);
+            outline-style: hidden;
+            border: none;
+            transform: translateY(4px);
+        }
+
+    }
+}

@@ -71,13 +71,11 @@ var LiveUpdate = function(userID) {
                 var id = doc.id;
 
                 // Draws Party box
-                document.getElementById('list').innerHTML += "<div id='"
-                + id +"-01' class='card'><h4 class='text-center'> Party: "
-                 + doc.data().partyName + '</h4>' +
-                '<button value="'+ id +'" class="edit-btn btn btn-primary">Add Songs</button>'+
-                '<button value="'+ id +'" class="show-btn btn btn-secondary">Start Show</button></div>'+
-                '<button value="'+ id +'" class="delete-btn btn btn-danger btn-block btn-lg">Delete</button></div>'+
-                '<hr>';
+                document.getElementById('list').innerHTML += "<div id='"+ id +"-01' class='party-box col-sm'>"+
+                "<div class='text-center party-box--title'> Party: "+ doc.data().partyName + "</div>" +
+                '<button value="'+ id +'" class="party-box--btn edit-btn">Add Songs</button>'+
+                '<button value="'+ id +'" class="party-box--btn show-btn">Start Show</button>'+
+                '<button value="'+ id +'" class="party-box--btn delete-btn">Delete</button></div>';
 
                 var delBtn = document.querySelectorAll('.delete-btn');
                 delBtn.forEach(function(doc){
