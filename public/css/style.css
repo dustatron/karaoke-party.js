@@ -71,6 +71,11 @@ a:active {
   .playlist-box--slider {
     position: relative;
     transition: all 1s; }
+  .playlist-box--title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase; }
   .playlist-box--search {
     position: absolute;
     top: 0rem;
@@ -198,6 +203,7 @@ a:active {
 .nav-bar {
   position: fixed;
   font-size: 1.5rem;
+  color: white;
   z-index: 10;
   background-color: #070707;
   height: 4.5rem;
@@ -217,14 +223,5 @@ a:active {
     text-decoration: none;
     font-size: 1.9rem;
     text-decoration: none; }
-
-.show-nav {
-  position: fixed;
-  z-index: 10;
-  background-color: #070707;
-  height: 5rem;
-  padding-top: .6rem;
-  width: 101%;
-  left: 15px;
-  top: 0;
-  text-align: center; }
+  .nav-bar--party-tite {
+    text-transform: uppercase; }

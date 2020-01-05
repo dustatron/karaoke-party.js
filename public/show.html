@@ -40,13 +40,15 @@
   
 
     <div class="container-fluid">
-        <div class="row show-nav">
-            <div class="col-md-2">
-                <a href="main.html" class="home-btn"><i class="fas fa-home"></i></a>
+         <!-- TOOL BAR -->
+         <div class="row nav-bar">
+            <div class="col-sm-12 text-center">
+                <ul class="menu">
+                    <li class='nav-bar--home-btn '><a href="main.html" class="nav-bar--hover"><i class="fas fa-home"></i></a></li>
+                    <li class='searchNavBtn nav-bar--hover' onclick="playUpdate()" > <i class="fas fa-microphone-alt"></i> PLAY  <span id="party-title" class="nav-bar--party-tite"></span> </li>
+                </ul>
             </div>
-            <div class="col-md-6">
-                <span class='title-text'>Your Part : <span id="party-title"></span></span>
-            </div>
+        </div>
         </div>
         <div class="row show-container">
             <div class="col-md-9 box-player">

@@ -113,6 +113,7 @@ var newSong = function() {
             //Write to Firestore
             playlistDB.collection("playlist").add(addSong)
             .then(function(docRef) {
+                
                 newSongInput.val(' ');
                 printOut.innerHTML = '<div class="card text-center"> <h3>Your video "'+ data.items[value].snippet.title +'" was added </h3> </div>';
                 topFunction();
@@ -135,7 +136,7 @@ var LiveUpdate = function() {
             var listOut = document.getElementById('listout')
             listOut.innerHTML = " ";
             var tally = 0;
-
+            
             //Writes list
             querySnapshot.forEach(function(doc, i) {
                 // songObj.push(doc.data().youtubeID);
@@ -147,6 +148,12 @@ var LiveUpdate = function() {
             });
             
         });
+}();
+
+var partyNameDraw = function() {
+    playlistDB.onSnapshot(function(doc) {
+        var partyName = document.getElementById('party-name').innerHTML = doc.data().partyName;
+    });
 }();
 
 var songCountUpdater = function (){

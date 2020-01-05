@@ -82,7 +82,10 @@ var LiveUpdate = function(userID) {
                 var delBtn = document.querySelectorAll('.delete-btn');
                 delBtn.forEach(function(doc){
                     doc.addEventListener('click', function(){
-                        killParty(doc.value);
+                        var confirmDelete = confirm("Are you sure you want to delete this party?");
+                        if (confirmDelete) {
+                            killParty(doc.value);
+                        } 
                     })
                 });
 
