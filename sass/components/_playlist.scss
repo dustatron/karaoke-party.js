@@ -3,7 +3,7 @@
     background-color: #333;
     height: 90vh;
     width: 95vw;
-    margin: 10px auto;
+    margin: 5rem 1rem;
     color: lightgray;
     overflow: hidden;
     overflow: scroll;
@@ -13,11 +13,6 @@
 }
 
 
-.slider-box{
-    position: relative;
-	transition: all 1s;
-}
-
 .playlist-box {
     position: absolute;
     top: 0.01rem;
@@ -26,17 +21,24 @@
     height: 90vh;
     /* background-color:; */
     padding: 3rem;
+
+    &--slider{
+        position: relative;
+        transition: all 1s;
+    }
+
+    &--search {
+        position: absolute;
+        top: 0rem;
+        left: 95vw;
+        width: 95vw;
+        height: 90vh;
+        /* background-color: #121212; */
+        padding: 3rem;
+    }
 }
 
-.search-box {
-    position: absolute;
-    top: 0rem;
-    left: 95vw;
-    width: 95vw;
-    height: 90vh;
-    /* background-color: #121212; */
-    padding: 3rem;
-}
+
 
 .searchNavBtn {
     cursor: pointer;

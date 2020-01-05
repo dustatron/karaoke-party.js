@@ -2,24 +2,42 @@ var param = window.location.search.substring(1);
 var playlistDB = firestore.collection("parties").doc(param);
 // var searchScreen = $('#printout');
 
+//---- Check Log in Status ------
+var isLoggedIn = function(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            var userID = firebase.auth().currentUser.uid;
+            LiveUpdate(userID);
+        }else{
+            window.location.replace('index.html?' + param);
+        }
+    });
+  
+}();
+
 
 //----- Nav Buttons -----
 var navButtons = function() {
-    var search, playlist, share;
+    var search, playlist, share, boxSlider;
+
+    boxSlider = $(".playlist-box--slider");
 
     search = $( ".searchNavBtn" ).click(function() {
-        document.getElementById('slider-box').scrollIntoView()
-        $(".slider-box").css( 'transform', 'translateX(-95vw)');
+        console.log('search');
+        document.getElementById('slider-box').scrollIntoView();
+        boxSlider.css( 'transform', 'translateX(-95vw)');
         
-      });;
+      });
 
       playlist = $( ".playlistNavBtn" ).click(function() {
-        $(".slider-box").css( 'transform', 'translate(0vw, 0px)');
-      });;
+        console.log('playlist');
+        boxSlider.css( 'transform', 'translate(0vw, 0px)');
+      });
 
       share = $( ".shareNavBtn" ).click(function() {
         console.log('click');
-      });;
+      });
 
 }();
 
@@ -95,7 +113,6 @@ var newSong = function() {
             //Write to Firestore
             playlistDB.collection("playlist").add(addSong)
             .then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
                 newSongInput.val(' ');
                 printOut.innerHTML = '<div class="card text-center"> <h3>Your video "'+ data.items[value].snippet.title +'" was added </h3> </div>';
                 topFunction();
@@ -114,16 +131,43 @@ newSong();
 var LiveUpdate = function() {
     playlistDB.collection("playlist").orderBy("timeStamp")
         .onSnapshot(function(querySnapshot) {
-            document.getElementById('list').innerHTML = " ";
+            // Clears list 
+            var listOut = document.getElementById('listout')
+            listOut.innerHTML = " ";
+            var tally = 0;
 
-            querySnapshot.forEach(function(doc) {
-                var id = doc.id;
-
-                document.getElementById('list').innerHTML += doc.data().songName + '<hr>';
-
+            //Writes list
+            querySnapshot.forEach(function(doc, i) {
+                // songObj.push(doc.data().youtubeID);
+                tally ++;
+                listOut.innerHTML += '<div id="'+ tally +'" class="song-box">'+
+                // '<div class="song-box--img">' + '<img class="song-box--image" src="'+ doc.data().thumbnail +'" alt="image"></div>' +
+                 '<div class=" col-md-12 song-box--copy"><span class="tally">['+tally+']</span>'+doc.data().songName + ' </div>' +
+                '</div>';
             });
+            
         });
 }();
+
+var songCountUpdater = function (){
+    playlistDB.onSnapshot(function(doc) {
+        showCurrentSong(doc.data().songCount);
+    });
+}();
+
+function showCurrentSong(que) {
+    clearCurrentSong();
+    currentSong = document.getElementById(que);
+    currentSong.classList.add("active-song");
+
+  }
+
+  function clearCurrentSong() {
+    clearList = document.querySelectorAll('.active-song');
+    clearList.forEach(function(doc){
+      doc.classList.remove("active-song");
+    });
+  }
 
 function topFunction() {
     console.log('topFunction');

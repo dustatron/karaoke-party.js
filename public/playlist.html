@@ -40,27 +40,26 @@
   <script src="/__/firebase/init.js"></script>
   
 
-    <div class="box-container">
+    <div id='box' class="box-container">
         <!-- TOOL BAR -->
-        <div class="row tool-bar">
+        <div class="row nav-bar">
             <div class="col-sm-12 text-center">
                 <ul class="menu">
-                    <li class='searchNavBtn'><a href="main.html" class="home-btn"><i class="fas fa-home"></i></a></li>
-                    <li class='playlistNavBtn'> <a href="#"></a><i class="fas fa-list"></i> Playlist </a> </li>
-                    <li class='searchNavBtn'> <i class="fab fa-searchengin"></i> Search </li>
-                    <li class='shareNavBtn'> <i class="fas fa-share-square"></i> Share </li>
+                    <li class='nav-bar--home-btn '><a href="main.html" class="nav-bar--hover"><i class="fas fa-home"></i></a></li>
+                    <li class='playlistNavBtn nav-bar--hover'> <a href="#"></a><i class="fas fa-list"></i> Playlist </a> </li>
+                    <li class='searchNavBtn nav-bar--hover'> <i class="fab fa-searchengin"></i> Search </li>
+                    <li class='shareNavBtn nav-bar--hover'> <i class="fas fa-share-square"></i> Share </li>
                 </ul>
             </div>
         </div>
-        <div id="slider-box" class="slider-box">
+        <div id="slider-box" class="playlist-box--slider">
             <!-- Playlist Box -->
             <div class="playlist-box">
-                <h3 class='text-center'>Playlist</h3>
-                <div id="list"> </div>
+                <div id="listout"> </div>
             </div>  
 
             <!-- Search Box -->
-            <div id="search-box" class="search-box">
+            <div id="search-box" class="playlist-box--search">
             <!-- Search for Song -->
                 <h3 class="text-center">Song Search</h3>
                 <div class="input-group mb-3">

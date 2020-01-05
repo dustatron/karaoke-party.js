@@ -1,10 +1,25 @@
 var param = window.location.search.substring(1);
 var playlistDB = firestore.collection("parties").doc(param);
-var counter = 0;
+
 var songObj = [];
 var started = false;
 var isPlayingNow = false;
 
+var songCount = 0;
+var counter = function(number) {
+  if(number === 1) {
+    songCount ++;
+    playlistDB.update({
+      "songCount": songCount });
+
+  } else if(number === 2) {
+    songCount = songCount - 2;
+    playlistDB.update({
+      "songCount": songCount });
+  } else {
+    return songCount;
+  }
+}
 
 
 //UI 
@@ -101,7 +116,8 @@ function onPlayerReady(event) {
   }
 
 function playerBackword() {
-   counter = counter -2;
+  counter(2);
+  //  counter = counter -2;
    playUpdate();
 }
 
@@ -109,11 +125,12 @@ function playerBackword() {
     var end = 'qyQx7nxXdD0';
     var playThis;
     
-    if(songObj.length > counter ) {
-        playThis = songObj[counter];
+    if(songObj.length > counter() ) {
+      var currentSongNumber = counter();
+        playThis = songObj[counter()];
         player.loadVideoById(playThis);
-        showCurrentSong(counter+1);
-        counter ++;
+        showCurrentSong(currentSongNumber+1);
+        counter(1);
     } else {
         playThis = end;
         player.loadVideoById(playThis);
