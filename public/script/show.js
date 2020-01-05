@@ -1,3 +1,18 @@
+
+//---- Check Log in Status ------
+var isLoggedIn = function(){
+  firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+          // User is signed in.
+          var userID = firebase.auth().currentUser.uid;
+          LiveUpdate(userID);
+      }else{
+          window.location.replace('index.html');
+      }
+  });
+
+}();
+
 var param = window.location.search.substring(1);
 var playlistDB = firestore.collection("parties").doc(param);
 

@@ -5,7 +5,7 @@
     if(param){
       return 'playlist.html?' + param;
     } else {
-      return 'main.html?' + param;
+      return 'main.html'
     }
   };
    
