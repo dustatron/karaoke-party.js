@@ -36,7 +36,7 @@ var navButtons = function() {
       });
 
       share = $( ".shareNavBtn" ).click(function() {
-        console.log('click');
+          console.log('click');
       });
 
 }();
@@ -136,6 +136,8 @@ var LiveUpdate = function() {
             var listOut = document.getElementById('listout')
             listOut.innerHTML = " ";
             var tally = 0;
+            var shareLink = document.getElementById('share-btn');
+            shareLink.setAttribute("value", window.location.href);
             
             //Writes list
             querySnapshot.forEach(function(doc, i) {
@@ -181,3 +183,4 @@ function topFunction() {
 
     document.getElementById('slider-box').scrollIntoView(true);
   }
+
