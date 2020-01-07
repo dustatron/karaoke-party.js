@@ -10,16 +10,17 @@ _This is an app that lets a group of people colaberate on a youtube karaoke play
 
 ## Setup/Installation Requirements
 
-* _clone from github_
-* _open in VSCODE_
-* _Finsih this assignment with jpeg images_
+* _Clone from github_
+* _Start an account with google firebase_
+* _Update firebase and youtube api keys_
+* _Install firebase CLI_
+* _Run firebase serve in terminal to check if site works_
+* _Run firebase deploy to deploy to your firebase account_
 
-
-_Theres nothing you need, youre pretty  much good to go. wow!_
 
 ## Known Bugs
 
-_IMG isnt loading on chrome_
+_The Show page seems to not load on the first try._
 
 ## Support and contact details
 
@@ -27,10 +28,10 @@ _No support is provided use at own risk_
 
 ## Technologies Used
 
-_html md_
+_Technologies require are Node.js, jquery, Google Firebase_
 
 ### License
 
 *open source*
 
-Copyright (c) 2020 **_Mcdonalds_**
+Copyright (c) 2020 **_Dusty McCord_**
