@@ -1,6 +1,6 @@
 
 .box-container {
-    background-color: #333;
+    // background-color: #333;
     height: 90vh;
     width: 95vw;
     margin: 5rem 1rem;
@@ -12,6 +12,21 @@
     // border-radius: 10px;
 }
 
+// .resp-container{
+//     position: relative;
+//     overflow: hidden;
+//     padding-top: 30%;
+// }
+
+.playlist--item {
+    background-color: $color-dk-grey;
+    margin-top: .5rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1rem 3rem;
+}
+
 
 .playlist-box {
     position: absolute;
@@ -19,19 +34,32 @@
     left: 0;
     width: 95vw;
     height: 90vh;
-    /* background-color:; */
     padding: 3rem;
+    
 
     &--slider{
         position: relative;
         transition: all 1s;
     }
 
+    &--item {}
+
     &--title {
         font-size: 2rem;
         font-weight: 500;
         text-align: center;
-        text-transform: uppercase;
+        text-transform: capitalize;
+        height: 10rem;
+        padding-top: 1.6rem;
+        margin-bottom: .5rem;
+        background: -moz-linear-gradient(8deg, rgba(168,0,168,1) 0%, rgba(168,0,168,1) 6%, rgba(255,77,77,1) 100%); /* ff3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(168,0,168,1)), color-stop(6%, rgba(168,0,168,1)), color-stop(100%, rgba(255,77,77,1))); /* safari4+,chrome */
+        background: -webkit-linear-gradient(8deg, rgba(168,0,168,1) 0%, rgba(168,0,168,1) 6%, rgba(255,77,77,1) 100%); /* safari5.1+,chrome10+ */
+        background: -o-linear-gradient(8deg, rgba(168,0,168,1) 0%, rgba(168,0,168,1) 6%, rgba(255,77,77,1) 100%); /* opera 11.10+ */
+        background: -ms-linear-gradient(8deg, rgba(168,0,168,1) 0%, rgba(168,0,168,1) 6%, rgba(255,77,77,1) 100%); /* ie10+ */
+        background: linear-gradient(82deg, rgba(168,0,168,1) 0%, rgba(168,0,168,1) 6%, rgba(255,77,77,1) 100%); /* w3c */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A800A8', endColorstr='#FF4D4D',GradientType=1 ); /* ie6-9 */
+    
     }
 
     &--search {
@@ -44,9 +72,11 @@
         padding: 3rem;
     }
 
+    &--search-bar{
+        padding: 1rem 3rem;
+    }
+
 }
-
-
 
 .searchNavBtn {
     cursor: pointer;
@@ -60,6 +90,6 @@
     cursor: pointer;
 }
 
-.card {
-    color:black !important;  
-}
+// .card {
+//     color:black !important;  
+// }

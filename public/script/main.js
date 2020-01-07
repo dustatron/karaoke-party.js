@@ -71,7 +71,7 @@ var LiveUpdate = function(userID) {
                 var id = doc.id;
 
                 // Draws Party box
-                document.getElementById('list').innerHTML += "<div id='"+ id +"-01' class='party-box col-sm'>"+
+                document.getElementById('list').innerHTML += "<div id='"+ id +"-01' class='party-box col-lg'>"+
                 "<div class='text-center party-box--title'> Party: "+ doc.data().partyName + "</div>" +
                 '<button value="'+ id +'" class="party-box--btn edit-btn">Add Songs</button>'+
                 '<button value="'+ id +'" class="party-box--btn show-btn">Start Show</button>'+

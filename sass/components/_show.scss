@@ -87,22 +87,22 @@
 }
 
 .song-box {
-    margin-bottom: 1rem;
+    margin-bottom: .2rem;
     padding: 0;
     height: 9rem;
     width: 100%;
     font-size: 1.2rem;
-    color: black;
-    background-color: #969696;
+    color: $color-white;
+    background-color: $color-dk-grey;
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 1px;
     border: 1px solid black;
 }
 .song-box--copy {
     padding-top: 1rem;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
@@ -114,5 +114,5 @@
 }
 
 .active-song {
-    background-color: lime !important;
+    background-color:$color-green;
 }

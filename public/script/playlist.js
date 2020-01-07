@@ -80,12 +80,12 @@ var newSong = function() {
         printOut.innerHTML = " ";
 
             data.items.forEach(function(video, index){
-                printOut.innerHTML += '<div class="card">'+
-                '<div class="col-xs-12 text-center"><h4>'+ video.snippet.title + '</h4></div>' +
-                '<div class="col-xs-4 embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'+ video.id.videoId +'"></iframe></div>'+
-                '<div class="col-md-12"><p class="description">'+video.snippet.description+'<p></div>'+
-                '<div class"col-md-12" ><button id="'+ index +'" type="button" class="add-btn btn btn-secondary btn-lg btn-block">Add Song</button></div>'+
-                '</div><br>';
+                printOut.innerHTML += '<div class="playlist--item">'+
+                '<div class="row"><div class="col-xs-12 text-center"><h4>'+ video.snippet.title + '</h4></div></div>' +
+                '<div class="row"><div class="col-xs-6 resp-container"><iframe class="video-frame" src="https://www.youtube.com/embed/'+ video.id.videoId +'"></iframe></div>'+
+                '<div class="col-md-6"><p class="description">'+video.snippet.description+'<p>'+
+                '<button id="'+ index +'" type="button" class="add-btn btn btn-secondary btn-lg btn-block">Add Song</button></div></div>'+
+                '</div>';
 
             });
 
@@ -115,7 +115,7 @@ var newSong = function() {
             .then(function(docRef) {
                 
                 newSongInput.val(' ');
-                printOut.innerHTML = '<div class="card text-center"> <h3>Your video "'+ data.items[value].snippet.title +'" was added </h3> </div>';
+                printOut.innerHTML = '<div class="playlist--item text-center"> <h3>Your video "'+ data.items[value].snippet.title +'" was added </h3> </div>';
                 topFunction();
             })
             .catch(function(error) {

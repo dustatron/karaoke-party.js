@@ -17,7 +17,7 @@ html {
 
 body {
   color: black;
-  background-color: #5c5c5c;
+  background-color: black;
   line-height: 1.7;
   outline: none;
   box-sizing: border-box;
@@ -50,7 +50,6 @@ a:active {
                                     supported by Chrome, Opera and Firefox */ }
 
 .box-container {
-  background-color: #333;
   height: 90vh;
   width: 95vw;
   margin: 5rem 1rem;
@@ -60,13 +59,20 @@ a:active {
   padding: 0;
   position: relative; }
 
+.playlist--item {
+  background-color: #121212;
+  margin-top: .5rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1rem 3rem; }
+
 .playlist-box {
   position: absolute;
   top: 0.01rem;
   left: 0;
   width: 95vw;
   height: 90vh;
-  /* background-color:; */
   padding: 3rem; }
   .playlist-box--slider {
     position: relative;
@@ -75,7 +81,24 @@ a:active {
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
-    text-transform: uppercase; }
+    text-transform: capitalize;
+    height: 10rem;
+    padding-top: 1.6rem;
+    margin-bottom: .5rem;
+    background: -moz-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a800a8), color-stop(6%, #a800a8), color-stop(100%, #ff4d4d));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+    /* ie10+ */
+    background: linear-gradient(82deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A800A8', endColorstr='#FF4D4D',GradientType=1 );
+    /* ie6-9 */ }
   .playlist-box--search {
     position: absolute;
     top: 0rem;
@@ -84,6 +107,8 @@ a:active {
     height: 90vh;
     /* background-color: #121212; */
     padding: 3rem; }
+  .playlist-box--search-bar {
+    padding: 1rem 3rem; }
 
 .searchNavBtn {
   cursor: pointer; }
@@ -93,9 +118,6 @@ a:active {
 
 .shareNavBtn {
   cursor: pointer; }
-
-.card {
-  color: black !important; }
 
 .title-text {
   margin: auto;
@@ -139,7 +161,7 @@ a:active {
 
 .btn-show:hover {
   cursor: pointer;
-  background-color: lime;
+  background-color: #ff4d4d;
   -webkit-box-shadow: 0px 5px #252814;
   box-shadow: 0px 5px #252814;
   transform: scale(1.05); }
@@ -173,22 +195,22 @@ a:active {
   box-shadow: inset 1px 6px 13px -2px rgba(0, 0, 0, 0.69); }
 
 .song-box {
-  margin-bottom: 1rem;
+  margin-bottom: .2rem;
   padding: 0;
   height: 9rem;
   width: 100%;
   font-size: 1.2rem;
-  color: black;
-  background-color: #969696;
+  color: white;
+  background-color: #121212;
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 1px;
   border: 1px solid black; }
 
 .song-box--copy {
   padding-top: 1rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -198,29 +220,42 @@ a:active {
   margin-right: 1rem; }
 
 .active-song {
-  background-color: lime !important; }
+  background-color: #ff4d4d; }
 
 .search-bar {
   margin-top: 5rem;
   height: 10rem;
-  background-color: #333;
-  padding: 1rem 3rem;
-  color: white; }
+  padding: 2rem 10rem;
+  color: white;
+  background: -moz-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+  /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a800a8), color-stop(6%, #a800a8), color-stop(100%, #ff4d4d));
+  /* safari4+,chrome */
+  background: -webkit-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+  /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+  /* opera 11.10+ */
+  background: -ms-linear-gradient(8deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+  /* ie10+ */
+  background: linear-gradient(82deg, #a800a8 0%, #a800a8 6%, #ff4d4d 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A800A8', endColorstr='#FF4D4D',GradientType=1 );
+  /* ie6-9 */ }
 
 .party-box {
-  height: 12rem;
-  widows: auto;
-  background-color: #333;
+  max-height: 35%;
+  min-width: 80%;
+  background-color: #121212;
   color: white;
-  margin: 2.2rem;
+  margin: 1rem .2rem 0rem 0rem;
   text-align: center;
-  border-radius: 5px;
-  padding-top: 1.3rem; }
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem; }
   .party-box--title {
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
-    text-transform: uppercase; }
+    text-transform: capitalize; }
   .party-box--btn {
     margin-top: 1rem;
     height: 3rem;
@@ -235,7 +270,7 @@ a:active {
     box-shadow: 0px 5px black;
     transition: all .2s; }
     .party-box--btn:hover {
-      background-color: lime;
+      background-color: #ff4d4d;
       -webkit-box-shadow: 0px 5px #252814;
       box-shadow: 0px 5px #252814;
       transform: scale(1.05); }
@@ -266,7 +301,7 @@ a:active {
     transition: all .3s; }
   .nav-bar--hover:hover {
     transform: scale(1.1);
-    color: lime; }
+    color: #ff4d4d; }
   .nav-bar--home-btn {
     text-decoration: none;
     font-size: 1.9rem;
