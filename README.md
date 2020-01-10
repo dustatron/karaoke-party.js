@@ -1,7 +1,7 @@
 # _Karaoke Party Playlist_
 [Link to Development site](https://kparty-38f4c.firebaseapp.com/)
 
-#### _A tool for creating a youtube karaoke playlist with friend, 01.07.20_
+#### _A tool for creating a youtube karaoke playlist with friends, 01.07.20_
 
 #### By _**Dusty Mccord**_
 
