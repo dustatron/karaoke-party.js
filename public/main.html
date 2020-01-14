@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Main Page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- Twitter Bootstrabs -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
     <!-- Font font-awesome -->
     <script src="https://kit.fontawesome.com/fde1caffb7.js" crossorigin="anonymous"></script>
 
@@ -20,28 +25,31 @@
     <!-- custom css  -->
     <link type="text/css" rel="stylesheet" href="css/style.css" />
 
-   
+
 </head>
+
 <body>
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="/__/firebase/7.6.1/firebase-app.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/7.6.1/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="/__/firebase/7.6.1/firebase-auth.js"></script>
-  <script src="/__/firebase/7.6.1/firebase-firestore.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/7.6.1/firebase-auth.js"></script>
+    <script src="/__/firebase/7.6.1/firebase-firestore.js"></script>
 
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
-  
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
 
     <div class="container-md">
         <!-- TOOL BAR -->
         <div class="row nav-bar">
             <div class="col-sm-12 text-center">
                 <ul class="menu">
-                    <li class='nav-bar--home-btn '><a href="main.html" class="nav-bar--hover"><i class="fas fa-home"></i></a></li>
-                    <li class='searchNavBtn nav-bar--hover' onclick="logOut()"> <i class="fas fa-sign-out-alt" ></i> Log Out </li>
+                    <li class='nav-bar--home-btn '><a href="main.html" class="nav-bar--hover"><i
+                                class="fas fa-home"></i></a></li>
+                    <li class='searchNavBtn nav-bar--hover' onclick="logOut()"> <i class="fas fa-sign-out-alt"></i> Log
+                        Out </li>
                 </ul>
             </div>
         </div>
@@ -54,7 +62,7 @@
             <div class="input-group mb-3">
                 <input id='newInput' type="text" class="form-control" placeholder="Party Name">
                 <div class="input-group-append">
-                  <button id='new' class="btn btn-outline-secondary" type="button">Create</button>
+                    <button id='new' class="btn btn-outline-secondary" type="button">Create</button>
                 </div>
             </div>
 
@@ -62,9 +70,10 @@
         <div id="list" class="row"> </div>
     </div>
 
-    
+
 
     <script src='script/firebase.js'></script>
     <script src='script/main.js'></script>
 </body>
+
 </html>

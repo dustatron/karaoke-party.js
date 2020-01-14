@@ -10,6 +10,7 @@
   outline-style: none; }
 
 html {
+  font-family: 'Comfortaa', cursive;
   margin: 0;
   padding: 0;
   font-size: 62.5%;
@@ -23,6 +24,11 @@ body {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   font-weight: 400; }
+
+h1 {
+  font-family: 'Comfortaa', cursive;
+  color: red;
+}
 
 a:link, a:visited {
   color: white;
